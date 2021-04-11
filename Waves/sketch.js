@@ -23,7 +23,7 @@ let waves = [];
 function setup() {
   createCanvas(1200, 800);
   for (let i = 0; i < 20; i++) {
-    waves[i] = new Wave(random(10, 120), random(100, 2000), random(0, TWO_PI))
+    waves[i] = new Wave(random(10, 100), random(101, 200), random(0, TWO_PI))
   }
 }
 
