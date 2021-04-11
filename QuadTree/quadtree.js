@@ -1,8 +1,9 @@
 class Point{
-    constructor(x, y)
+    constructor(x, y, userData)
     {
         this.x = x;
         this.y = y;
+        this.userData = userData;
     }
 }
 
@@ -73,7 +74,7 @@ class QuadTree{
                 this.subdivide();
             }
             this.northest.insert(point);
-            this.southwest.insert(point);
+            this.northwest.insert(point);
             this.southwest.insert(point);
             this.southest.insert(point);
 
@@ -81,7 +82,10 @@ class QuadTree{
     }
 
     query(range, found){
-
+        if(!found)
+        {
+            found = [];
+        }
         if (!this.boundry.intersect(range))
         {
             return;
@@ -102,7 +106,7 @@ class QuadTree{
                 this.southwest.query(range, found);
             }
 
-            return;
+            return found;
         }
 
     }
