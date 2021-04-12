@@ -5,6 +5,10 @@ class Point{
         this.y = y;
         this.userData = userData;
     }
+
+    sum(point){
+        return new Point(this.x + point.x, this.y +point.y)
+    }
 }
 
 class Rectangle{
@@ -88,7 +92,7 @@ class QuadTree{
         }
         if (!this.boundry.intersect(range))
         {
-            return;
+            return found;
         }else{
             for(let p of  this.points)
             {
