@@ -4,11 +4,11 @@ class Particle {
         this.y = y;
         //this.speed = new Point(cos(dir), sin(dir));
         this.dir = dir
-        this.r = 2;
+        this.r = 1.5;
         this.highlight = false;
     }
 
-    move() {
+    move(){
         this.x += cos(this.dir);
         this.y += sin(this.dir);
     }

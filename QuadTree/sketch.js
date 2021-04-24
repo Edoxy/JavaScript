@@ -11,8 +11,8 @@ function setup(){
     border[2] = new Rectangle(width/2, height, width/2, toll);
     border[3] = new Rectangle(0, height/2, toll, height/2);
 
-    for(let i = 0; i < 5000; i++){
-        particles[i] = new Particle(random(width), random(height), random(TWO_PI));
+    for(let i = 0; i < 10000; i++){
+        particles[i] = new Particle(random(toll, width-toll), random(toll, height-toll), random(TWO_PI));
     }
 }
 
