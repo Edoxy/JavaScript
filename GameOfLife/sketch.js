@@ -33,7 +33,7 @@ function countN(grid, i, j)
 }
 
 function setup() {
-  createCanvas(1100, 800);
+  createCanvas(1200, 800);
   cols = width / resolution;
   rows = height / resolution;
 
@@ -61,8 +61,9 @@ function draw() {
 
       if (grid[i][j] == 1)
       {
-        stroke(i *2, j *2, 150);
-        ellipse(i * resolution + resolution/2, j * resolution + resolution/2, resolution-2)
+        colorMode(HSL);
+        stroke(j+i, 255, 80);
+        ellipse(i * resolution + resolution/2, j * resolution + resolution/2, resolution)
 
         if (sum >= 2 && sum <= 3){
           next[i][j] = 1;
