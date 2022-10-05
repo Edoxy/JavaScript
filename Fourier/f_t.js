@@ -123,6 +123,7 @@ function draw() {
         //ellipse(x, y, 4)
 
     }
+
     //stores the y position to draw the resulting wave
     trace.unshift(y)
 

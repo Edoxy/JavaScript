@@ -1,5 +1,5 @@
 
-let resolution = 5;
+let resolution = 20;
 let cols;
 let rows;
 
@@ -34,6 +34,7 @@ function countN(grid, i, j)
 
 function setup() {
   createCanvas(1200, 800);
+  //createCanvas(displayWidth-100, displayHeight-100);
   cols = width / resolution;
   rows = height / resolution;
 
@@ -49,6 +50,7 @@ function setup() {
 
 function draw() {
   background(0);
+  frameRate(3)
   let next = make2DArray(rows, cols)
 
   for (let i = 0; i < cols; i++)
@@ -62,8 +64,11 @@ function draw() {
       if (grid[i][j] == 1)
       {
         colorMode(HSL);
-        stroke(j+i, 255, 80);
-        ellipse(i * resolution + resolution/2, j * resolution + resolution/2, resolution)
+        stroke((i + j) % 255, 255, 60);
+        strokeWeight(2)
+        
+        //ellipse(i * resolution + resolution/2, j * resolution + resolution/2, resolution/1.3)
+        square(i * resolution +1, j * resolution +1, (resolution/1.3), 2)
 
         if (sum >= 2 && sum <= 3){
           next[i][j] = 1;
@@ -80,5 +85,4 @@ function draw() {
     }
   }
   grid = next;
-  
 }

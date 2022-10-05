@@ -4,7 +4,7 @@ let toll = 4;
 let border = [];
 
 function setup(){
-    createCanvas(1200, 789);
+    createCanvas(2000, 1000);
     boundry = new Rectangle(width/2, height/2, width/2, height/2);
     border[0] = new Rectangle(width/2, 0, width/2, toll);
     border[1] = new Rectangle(width, height/2, toll, height/2);
